@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4 - Thara Le</title>
+        <link rel="stylesheet" href="Lab4.css">
+    </head>
+    <body>
+        <h1 id="headingone">INST377 - Lab 4</h1>
+
+        <!-- Main Container -->
+        <div class="mainContainer">
+            <!-- Left Half -->
+            <div class="leftHalf">
+                <!-- Alert Me Section -->
+                <div class="nameBox">
+                    <form name="contactForm" onsubmit="return alertMe()">
+                        <label for="firstName">Name:</label>
+                        <input type="text" id="firstName" required>
+                        <input type="submit" value="Alert me!">
+                    </form>
+                </div>
+                <!-- Text Tester Section -->
+                <div class="testBox" onsubmit="return formValidation()">
+                    <form name="testForm">
+                        <label for="textToTest">Test Tester:</label>
+                        <input type="text" id="textToTest">
+                        <input type="submit" value="Validate Text">
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Half -->
+            <div class="rightHalf">
+                <!-- Change Color Section -->
+                <div class="colorBox">
+                    <button onclick="changeColor()">Change Color</button>
+                </div>
+                <!-- Add Text Section -->
+                <div class="addBox">
+                    <button onclick="addText()">Add Text</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- JavaScript Code -->
+        <script type="text/javascript">
+
+            // Alert Me Section
+            function alertMe() {
+                console.log('Validating user input:', document.contactForm.firstName.value)
+                if(document.contactForm.firstName.value.trim() == "") {
+                    document.body.style.backgroundColor = 'orange'
+                    alert('Enter a valid first name!')
+
+                    return false;
+                }
+
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if(validationRegex.test(document.contactForm.firstName.value) == true) { // == true doesn't need to be there
+                    document.body.style.backgroundColor = 'red';
+                    alert('How about... no.')
+
+                    return false;
+                }
+
+                if(validationRegex.test(document.contactForm.firstName.value) == false 
+                && document.contactForm.firstName.value.trim() != "") { //checks value is not an empty string
+                    alert('Hi ' + document.contactForm.firstName.value.trim() + '!')
+                }
+            }
+
+            // Text Tester Section
+            function formValidation() {
+                console.log('Validating user input:', document.testForm.textToTest.value)
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if(validationRegex.test(document.testForm.textToTest.value) == true) { // == true doesn't need to be there
+                    document.body.style.backgroundColor = 'red';
+                    alert('How about... no.')
+
+                    return false;
+                }
+            }
+
+            // Change Color Section
+            function changeColor() {
+                console.log('Attempting to change color of text, current color is: ', document.body.style.backgroundColor)
+
+                if(document.body.style.backgroundColor == 'yellow') {
+                    document.body.style.backgroundColor = 'purple';
+                } else {
+                    document.body.style.backgroundColor = 'yellow';
+                }
+
+                console.log('Successfully changed color of text, new color is: ', document.body.style.backgroundColor)
+            }        
+            
+            // Add Text Section
+            function addText() {
+                console.log('Attempting to add text to: ', document.getElementById("headingone"))
+
+                const heading = document.getElementById("headingone");
+                heading.textContent = "INST377 - Lab 4 - Adding Text"; // += would be appending text
+
+                console.log('Successfully changed color of text, new color is: ', document.getElementById("headingone"))
+            }           
+            
+
+        </script>
+    </body>
+</html>
