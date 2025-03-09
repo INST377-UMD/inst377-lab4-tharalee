@@ -1,0 +1,58 @@
+body {
+    background-color: blanchedalmond;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.leftHalf {
+    width: 50%;
+    float: left;
+}
+
+.nameBox {
+    background-color: pink;
+    color: black;
+    border: 2px solid rgb(145, 99, 99);
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.testBox {
+    background-color: pink;
+    color: black;
+    border: 2px solid rgb(145, 99, 99);
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.rightHalf {
+    width: 50%;
+    float: right;
+}
+
+.colorBox {
+    background-color: pink;
+    color: black;
+    border: 2px solid rgb(145, 99, 99);
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 18px;
+    margin: 5px;
+    text-align: center;
+}
+
+.addBox{
+    background-color: pink;
+    color: black;
+    border: 2px solid rgb(145, 99, 99);
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 18px;
+    margin: 5px;
+    text-align: center;
+}
